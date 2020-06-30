@@ -1,35 +1,16 @@
 import React from 'react';
 import './App.css';
-import { useForm } from "react-hook-form";
+// import { useForm } from "react-hook-form";
 // import Counter from './components/Counter';
-import CounterHook from './components/CounterHook';
+// import CounterHook from './components/CounterHook';
+import FormHook from './components/FormHook';
 
 function App() {
-  const { register, handleSubmit, errors } = useForm();
-  const onSubmit = data => console.log(data);
   return (
     <div className="App">
       {/* <CounterHook  /> */}
       <h1>ユーザー登録</h1>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <label className="form__label">user name</label>
-        <input
-          name="userName"
-          type="name"
-          ref={register({
-            required: true
-          })}
-        />
-        {errors.userName && "Your input is required"}
-        <label className="form__label">password</label>
-        <input
-          name="password"
-          type="password"
-          ref={register({ required: true })}
-        />
-        <input type="submit" name="保存" />
-      </form>
-
+      <FormHook />
     </div>
   );
 }
